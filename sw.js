@@ -8,4 +8,12 @@ self.addEventListener("install", event => {
         } )
     );
 
+    lf.addEventListener("fetch", e => {
+        e.responseWith(
+            caches.match(e.request).then(response =>{
+                return response || fetch(e.request)
+                ;})
+        )
+    })
+
 });
