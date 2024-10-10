@@ -1,4 +1,59 @@
+
 body{
-    background: skyblue;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #5d14bdee;
+    text-align: center;
+    color: aliceblue;
+    font-family: Melvetica,Arial;
+}
+
+#add {
+    background-color: rgb(5, 139, 0);
+    border: 0;
+    color: aliceblue;
+    padding: 10px 10px;
+    padding-right: 40px;
+    cursor: pointer;
+    /* margin-top: 35px; */
+}
+
+.remove {
+    margin-top: 13px;
+    background-color: antiquewhite;
+    float:right;
+    clear: both;
+    padding-right:20px;
+    border-radius: 5px;
+    width: 60px;
+    height: 20px;
+    border-style: none;
+}
+
+#wrapper {
+    width: 550px;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    height: auto;
+    background-color: black;
+    margin-top: 120px;
+    margin-left: 295;
+    padding-bottom: 30px;
+    padding-left: 50;
+    padding-top:30;
+    padding-right: 65;
+    border-radius: 25px;
+}
+
+ul{
+    list-style: none;
+    text-align: left;
+    line-height: 35px;
+}
+
+#task{
+    border: none;
+    height: 30px;
+    border-radius: 25px;
+    font-size: 20px;
 }
