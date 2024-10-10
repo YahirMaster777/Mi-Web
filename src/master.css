@@ -1,6 +1,6 @@
 
 body{
-    background-color: #5d14bdee;
+    background-color: #383838ee;
     text-align: center;
     color: aliceblue;
     font-family: Melvetica,Arial;
@@ -13,13 +13,16 @@ body{
     padding: 10px 10px;
     padding-right: 40px;
     cursor: pointer;
+    border-radius: 20px;
+    text-align: center;
     /* margin-top: 35px; */
 }
 
 .remove {
     margin-top: 13px;
-    background-color: antiquewhite;
-    float:right;
+    background-color: rgb(255, 53, 53);
+    text-align: center;
+    margin-left: 55px;
     clear: both;
     padding-right:20px;
     border-radius: 5px;
@@ -49,6 +52,9 @@ ul{
     list-style: none;
     text-align: left;
     line-height: 35px;
+    align-items: center;
+    align-content: center;
+    margin: auto;
 }
 
 #task{
@@ -56,4 +62,11 @@ ul{
     height: 30px;
     border-radius: 25px;
     font-size: 20px;
+}
+
+li{
+
+    border: none;
+    text-decoration: none;
+    border-radius: 15px;
 }
