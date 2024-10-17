@@ -1,49 +1,69 @@
-function get_todos() {
+if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('sw1.js').then(reg => {
+    console.log("Registro exitoso");
+}).catch(err => {
+    console.log("Error de registro del SW")
+})
+}
+
+function get_todos(){
     var todos = new Array;
-    var todos_str = localStorage.getItem('todos');
-    if (todos_str !== null) {
+    var todos_str = localStorage.getItem('todo');
+    if(todos_str != null){
         todos = JSON.parse(todos_str);
     }
     return todos;
+
 }
 
-function add() {
+function add(){
     var task = document.getElementById('task').value;
-    var todos = get_todos()
-    todos.push(task)
-    localStorage.setItem('todos', JSON.stringify(todos));
-    show();
-    return false;
-}
 
-function clearDefault(a) {
-    if (a.default == a.value) { a.value = "" }
-}
-
-function remove() {
-    var id = this.getAttribute('id')
-    var todos = get_todos()
-    todos.splice(id, 1);
-    localStorage.setItem('todos', JSON.stringify(todos));
-    show();
-    return false;
-}
-
-function show() {
     var todos = get_todos();
+    todos.push(task);
+    localStorage.setItem('todo', JSON.stringify(todos));
+
+    show();
+
+    return false;
+}
+
+function clearDefault(a){
+    if(a.defaultValue=a.value){
+        a.value=""
+    }
+};
+
+function remove(){
+    var id = this.getAttribute('id');
+    var todos = get_todos();
+    todos.splice(id, 1);
+    localStorage.setItem('todo', JSON.stringify(todos));
+
+    show();
+
+    return false;
+}
+
+function show(){
+    var todos = get_todos();
+
     var html = '<ul>';
     for (var i = 0; i < todos.length; i++) {
-        html += '<li>' + todos[i] + '<button class="remove" id="' + i + '">Eliminar</button> </li>';
-    };
-    html += '</ul>';
-    document.getElementById('todos').innerHTML = html;
-    var buttons = document.getElementsByClassName('remove')
+        html += '<li>' + todos[i] + '<button class="remove" id="' + i + '">Borrar</button></li>';
+    }
+    
 
-    for(var i = 0; i <buttons.length; i++){
+    html += '</ul>';
+
+    document.getElementById('todos').innerHTML = html;
+
+    var buttons = document.getElementsByClassName('remove');
+    for(var i = 0; i < buttons.length; i++){
         buttons[i].addEventListener('click', remove);
-    };
+    }
+
 }
 
 document.getElementById('add').addEventListener('click', add);
 show();
-
